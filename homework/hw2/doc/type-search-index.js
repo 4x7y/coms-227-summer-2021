@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"hw2","l":"Game"},{"p":"hangmanui","l":"HangmanUI"},{"p":"hw2","l":"HideableChar"},{"p":"hw2","l":"PhraseSelector"},{"p":"hangmanui","l":"TextUIMain"},{"p":"hangmanui","l":"UIMain"}];updateSearchResults();
