@@ -12,3 +12,9 @@
 
 ## Assignments
 
+### Homework 2
+
+* [Spec](homework/hw2/hw2.pdf)
+* [Javadoc](homework/hw2/doc/index.html)
+* [SpecChecker](homework/hw2/speccheck_hw2.jar)
+* [Skeleton Code](homework/hw2/sum22_hw2_skeleton.zip)
