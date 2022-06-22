@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>Checkpoint 2</title>
+   <link rel="stylesheet" href="../navstyle.css" type="text/css" media="screen">
+</head>
+<body>
+<!-- NAVMENU START - do not edit -->
+<div id="sidebar"><ol><li><a href="page01.html">Introduction</a></li><li><a href="page02.html">Recursion</a></li><li><a href="page03.html">Cases</a></li><li><a href="page04.html">Further Examples</a></li><li><a href="page05.html">Checkpoint 1</a></li><li><a href="page06.html">Why Recursion?</a></li><li><a href="page07.html">Extra parameters</a></li><li><a href="page08.html">Checkpoint 2</a></li><li><a href="page09.html">Reflection</a></li></ol></div>
+<div id="main">
+<!-- NAVMENU END - do not edit -->
+
+<h2>Checkpoint 2</h2>
+
+<p>
+
+<ol class="addSpace">
+
+<li>Using <code>listAllFiles</code> as a guide, write a method that has one <code>File</code> argument: if the argument is a directory, the method returns the total <em>number</em> of files below it.  If the argument represents a file, the method just returns 1.  
+<pre class="block">
+public static int countFiles(File f) { ...
+</pre>
+
+<!--
+<li>Rewrite the <code>findFiles</code> method so that it doesn't use the helper method with the extra ArrayList parameter (i.e., the recursive method returns an <code>ArrayList</code> of strings).  Does this approach make the code easier or harder to write?
+-->
+
+<li>A mason is using rectangular bricks to make a walkway.  He has bricks that are 3 feet long and bricks that are 1 foot long.  If the walkway is a total of <em>n</em> feet long, how many different ways are there to lay out bricks for the walkway?
+
+For example, if <em>n</em> is 5, there are four possibilities:
+<p>
+<img src="bricks.png" />
+
+<p>
+Your method should look like this:
+<p>
+<pre class="block">
+public static int countPatterns(int n)
+{
+  // TODO
+}
+</pre>
+
+<p>
+Tip: What if <em>n</em> is 100? He can start with a 1-foot brick (and then do 99 feet more) or else he can start with a 3-foot brick (and then do 97 feet more).
+
+<!--
+<li>On your birthday, you receive a box in the mail.  You open it up, expecting to find a present, but inside there are just more boxes.  You open one of them, and it has an actual present for you in it, but the next one contains a present along with several more boxes!  And inside each of those boxes, sometimes you find a present, sometimes you find more boxes, or even some of each!
+<p>
+Write a recursive method that prints out the descriptions of all the presents (but not including the boxes).  You can start with the class <code>Thing</code>, where a <code>Thing</code> has a method <code>isPresent</code> that tells you whether it's a present or a box, and if it is a box, you can call the method <code>getContents</code> to get a list of all the <code>Thing</code>s it contains.
+<p>
+You can find code for the <code>Thing</code> class 
+<a href="Thing.java">here</a>.
+<p>
+Your method should look like this:
+<p>
+<pre class="block">
+public static void listAllPresents(Thing thing)
+{
+  // TODO
+}
+</pre>
+-->
+
+
+<!--
+<li>A method that generalizes the search performed in problem 2; it searches through a directory tree to find all files accepted by some search condition, returning an <code>ArrayList&lt;File&gt;</code> with the matching files.  The "condition" is represented by an interface:
+<pre class="block">
+public interface SearchCondition
+{
+  boolean accept(File f);
+}
+</pre> 
+
+<li> Test your method by creating a <code>SearchCondition</code> that will match all files whose names end with ".java", as in problem 2.  Create another one that just matches files below a directory called "src".
+-->
+</ol>
+<p>
+</p>
+
+<!-- NAVLINKS START - do not edit -->
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+<div id="footer"><table width="100%"><tr><td align="left"><a href="page07.html">&lt; Extra parameters</a></td><td align="right"><a href="page09.html">Reflection &gt;</a></td></tr></table></div>
+<!-- NAVLINKS END - do not edit -->
+</body>
+</html>

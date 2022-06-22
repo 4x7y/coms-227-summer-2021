@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>Reading data</title>
+   <link rel="stylesheet" href="../navstyle.css" type="text/css" media="screen">
+</head>
+<body>
+<!-- NAVMENU START - do not edit -->
+<div id="sidebar"><ol><li><a href="page01.html">Introduction</a></li><li><a href="page03.html">Reading from a file</a></li><li><a href="page04.html">The path to a file</a></li><li><a href="page05.html">Writing to a file</a></li><li><a href="page06.html">Parsing lines of a file</a></li><li><a href="page07.html">ArrayLists and arrays</a></li><li><a href="page08.html">Reading data</a></li><li><a href="page09.html">ArrayLists of objects</a></li><li><a href="page10.html">Polylines</a></li><li><a href="page11.html">Using an ArrayList</a></li><li><a href="page12.html">Reading a file into an ArrayList</a></li></ol></div>
+<div id="main">
+<!-- NAVMENU END - do not edit -->
+
+
+<h2>Reading data</h2>
+
+Since an ArrayList will expand as needed when we add elements, it is ideal for reading data from an input stream.  To read data into an array, we would have to know in advance how many items there will be, which normally requires reading the data twice - once to count the items, and a second time to fill the array.
+<p>
+With an ArrayList, we can just add elements as they are read.  Here is an example that parses a string containing numbers, and puts the values into an ArrayList:
+
+<pre class="block">
+  public static ArrayList&lt;Integer&gt; readNumbers(String text)
+  {
+    Scanner scanner = new Scanner(text);
+
+    ArrayList&lt;Integer&gt; nums = new ArrayList&lt;Integer&gt;();
+    
+    scanner = new Scanner(text);
+    while (scanner.hasNextInt())
+    { 
+      nums.add(scanner.nextInt());
+    }
+    return nums;  
+  }
+</pre>
+
+To try out this code see the complete example
+<a href="ArrayListExample1.java">ArrayListExample1.java</a>
+<p>
+Note that if what we really want is an int array of the correct size, we can create it after reading the data and copy everything over.
+
+<pre class="block">
+  public static int[] readNumbers(String text)
+  {
+    Scanner scanner = new Scanner(text);
+
+    ArrayList&lt;Integer&gt; nums = new ArrayList&lt;Integer&gt;();
+    
+    scanner = new Scanner(text);
+    while (scanner.hasNextInt())
+    { 
+      nums.add(scanner.nextInt());
+    }
+    
+    int[] ret = new int[nums.size()];
+    for (int i = 0; i < nums.size(); i += 1)
+    {
+      ret[i] = nums.get(i);
+    }
+    return ret;
+  }
+</pre>
+
+See
+<a href="ArrayListExample2.java">ArrayListExample2.java</a>
+<p>
+Note that there is a method <code>toArray</code> in the ArrayList class that converts an ArrayList to an array, but we can't use it here: we specifically need to return an array of int, and the <code>toArray</code> method would return an array of the wrapper type <code>Integer</code>.
+
+<!--
+<h3>Checkpoint 2</h3>
+
+Write a method 
+<pre class="block">
+    public static String[] removeDuplicates(String[] words)
+</pre>
+that removes duplicates from an array of strings. More precisely, the method returns a new array containing the strings in <code>words</code>, without any duplicates.  The given array <code>words</code> is not modified.
+<p>
+The simplest approach is to create an ArrayList without the duplicates, and then create the new array and copy items over.  Note that ArrayList has a method <code>contains</code> that tells you whether a given object is in the list.  Here, it is possible to use the method <code>toArray</code> to create the array, but the usage is a bit odd.  If <code>myList</code> is an ArrayList of Strings and you want to convert it to an array of Strings, it looks like
+<pre class="block">
+String[] theArray = myList.toArray(new String[]{});
+</pre>
+
+<p>
+(For reasons that are way too esoteric to get into here, it turns out that, at runtime, the ArrayList does not actually know the type of the elements that it contains, so the argument to the method is an empty array of String whose purpose is to enable <code>toArray</code>  to create an array of correct type to return.)
+-->
+<!--
+<p>
+<em>Optional</em>: The solution proposed in Checkpoint 2 suffers from two problems.  One is the extra memory requirement of the second list.  The other is that each call to the  <code>contains</code> method requires iterating through the whole second list to check whether your next string is already there.  We should be able to avoid the second issue by sorting the list first (ArrayList has a <code>sort</code> method).  Can you also avoid the first problem (and avoid the problems of <code>remove</code>)?  The idea is to <em>copy</em> elements into the correct position without using <code>remove</code> to alter the list structure.  
+-->
+
+
+
+
+<!-- NAVLINKS START - do not edit -->
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+<div id="footer"><table width="100%"><tr><td align="left"><a href="page07.html">&lt; ArrayLists and arrays</a></td><td align="right"><a href="page09.html">ArrayLists of objects &gt;</a></td></tr></table></div>
+<!-- NAVLINKS END - do not edit -->
+</body>
+</html>

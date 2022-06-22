@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>Accessing MyFiles</title>
+   <link rel="stylesheet" href="../navstyle.css" type="text/css" media="screen">
+</head>
+<body>
+<!-- NAVMENU START - do not edit -->
+<div id="sidebar"><ol><li><a href="page01.html">Welcome</a></li><li><a href="page02.html">Lab Logistics</a></li><li><a href="page03.html">Getting Help</a></li><li><a href="page04.html">Where Are My Files?</a></li><li><a href="page05.html">Eclipse</a></li><li><a href="page06.html">Creating a Workspace</a></li><li><a href="page07.html">Creating a Project</a></li><li><a href="page08.html">Creating a Class</a></li><li><a href="page09.html">Adding a main Method</a></li><li><a href="page10.html">Finding Your Project Files</a></li><li><a href="page11.html">Backups</a></li><li><a href="page12.html">Using a SpecChecker</a></li><li><a href="page13.html">Submitting an Assignment</a></li><li><a href="page14.html">Accessing MyFiles</a></li></ol></div>
+<div id="main">
+<!-- NAVMENU END - do not edit -->
+
+<h1>Accessing MyFiles (Optional)</h1>
+
+<h4>Note: All off-campus access requires VPN</h4>
+If you want to work on the campus network from home, you'll need to run the VPN client first before using any of the options below.  This is 
+described in the ITS document at
+<a href="https://www.it.iastate.edu/services/vpn" target="_blank">
+https://www.it.iastate.edu/services/vpn</a>.
+</a>.
+
+<h4>MyFiles</h4>
+
+"MyFiles", sometimes referred to as "Your <code>U:</code> drive", is the ISU network storage that is automatically available to all students and staff.  Access is through the Samba protocol, which 
+will give you a File Explorer or Finder window for your MyFiles, at which point you can easily a) copy files between your own computer and your MyFiles, or b) create a remote workspace (if your internet connection is fast).
+<p>
+To connect, you can basically follow the instructions in the SSG FAQ:
+<a href="http://www.cs.iastate.edu/how-access-your-files-through-samba-server" target="_blank">
+http://www.cs.iastate.edu/how-access-your-files-through-samba-server</a>, using the network path:
+<p>
+\\my.files.iastate.edu\Users\<em>yournetid</em>
+<p>
+where <em>yournetid</em> is replaced with your ISU NetID.
+<p>
+On a Mac, the server address is:
+smb://my.files.iastate.edu/Users/<em>yournetid</em>
+
+<h3>Special note when using a remote Eclipse workspace with a Mac</h3>
+
+You will probably need to add a line to the Eclipse config.ini file.
+<ol>
+<li>Go to Applications and find your Eclipse installation.  (Normally all you’ll see is one file, Eclipse.app.)
+<li>Right-click on that file and select Show Package Contents
+<li>Navigate to Contents-Eclipse-configuration
+<li>Open the file config.ini in a text editor and add the line
+<pre>
+	osgi.locking=none
+</pre>
+<li>Finally save the file.
+</ol>
+
+
+<!--
+<h4>Simple file transfers</h4>
+Another option available for the CS server (though not with CyFiles, apparently)
+is to use an sftp client such as Filezilla. See the SSG page
+<a href="http://www.cs.iastate.edu/how-use-filezilla" target=_blank>
+http://www.cs.iastate.edu/how-use-filezilla</a>
+<p>(This specifically describes FileZilla, but the instructions would essentially be the same for other sftp clients.) Once you are connected you can typically drag and drop files between the sftp client and an Explorer or Finder window.
+
+<p>
+There are some other suggestions in the SSG FAQ, see
+<a href="http://www.cs.iastate.edu/how-access-your-files-cs-file-server" target=_blank>
+http://www.cs.iastate.edu/how-access-your-files-cs-file-server</a>.
+-->
+<!--
+<h3>Using the CS department terminal server with Remote Desktop</h3>
+You can also access your CS department account using Remote Desktop from any computer
+with an internet connection.
+It will behave as though it was a private Windows machine, one which is very old and slow. 
+
+<ol>
+<li>Go to Start-&gt;All Programs-&gt;Accessories-&gt;Remote Desktop Connection.
+(On a Mac, Remote Desktop is found in the Applications folder.)
+</li>
+<li>Type <code>cstc.cs.iastate.edu</code> into the Computer field. Click the Connect button.</li>
+<li>Log in using your ISU credentials.
+</ol>
+You should now be able to treat the Remote Desktop Window as its own separate computer screen.  You can run Eclipse now from it.
+<strong>Make sure to log out when you are done.</strong>
+-->
+
+
+<!-- NAVLINKS START - do not edit -->
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+<div id="footer"><table width="100%"><tr><td align="left"><a href="page13.html">&lt; Submitting an Assignment</a></td><td align="right"></td></tr></table></div>
+<!-- NAVLINKS END - do not edit -->
+</body>
+</html>

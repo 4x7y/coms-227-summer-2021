@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>Reading from a file</title>
+   <link rel="stylesheet" href="../navstyle.css" type="text/css" media="screen">
+</head>
+<body>
+<!-- NAVMENU START - do not edit -->
+<div id="sidebar"><ol><li><a href="page01.html">Introduction</a></li><li><a href="page03.html">Reading from a file</a></li><li><a href="page04.html">The path to a file</a></li><li><a href="page05.html">Writing to a file</a></li><li><a href="page06.html">Parsing lines of a file</a></li><li><a href="page07.html">ArrayLists and arrays</a></li><li><a href="page08.html">Reading data</a></li><li><a href="page09.html">ArrayLists of objects</a></li><li><a href="page10.html">Polylines</a></li><li><a href="page11.html">Using an ArrayList</a></li><li><a href="page12.html">Reading a file into an ArrayList</a></li></ol></div>
+<div id="main">
+<!-- NAVMENU END - do not edit -->
+
+<h2>Reading from a file</h2>
+
+
+
+<p>
+We have seen that a <code>Scanner</code> can be constructed to read from 
+<code>System.in</code>, and in previous labs we have seen 
+examples in which a Scanner reads its input from a String.  We can also
+construct a <code>Scanner</code> to read from other kinds of input streams, and in
+particular we can use a <code>Scanner</code> to read from a text file.
+<p>
+
+For example, here is a short program that reads lines of text from the console, and prints out each line with a line number in front of it.
+
+<pre class="block">
+public class LineNumberer
+{
+  public static void main(String[] args)
+  {
+    Scanner scanner = new Scanner(System.in);
+    int lineCount = 1;
+
+    while (scanner.hasNextLine())
+    {
+      String line = scanner.nextLine();
+      System.out.print(lineCount + " ");
+      System.out.println(line);
+      lineCount += 1;
+    }
+  }
+}
+</pre>
+
+With very few changes, we can rewrite the line numberer to read from a file.
+
+<pre class="block">
+package lab6;
+<span style="color:red">import java.io.File;</span>
+<span style="color:red">import java.io.FileNotFoundException;</span>
+import java.util.Scanner;
+
+public class LineNumberer2
+{
+  public static void main(String[] args) <span style="color:red">throws FileNotFoundException</span>
+  {
+    <span style="color:red">File file = new File("story.txt");</span>
+    Scanner scanner = new Scanner(<span style="color:red">file</span>);
+    int lineCount = 1;
+
+    while (scanner.hasNextLine())
+    {
+      String line = scanner.nextLine();
+      System.out.print(lineCount + " ");
+      System.out.println(line);
+      lineCount += 1;
+    }
+    <span style="color:red">scanner.close();</span>
+  }
+}
+
+</pre>
+
+<p>
+Try this code out! To run in Eclipse, the file <a href="story.txt">story.txt</a> must be present
+in the project directory.  
+
+<p>
+Try changing the filename to something invalid and
+see what happens. 
+When the file you've named in the <code>File</code> constructor isn't there, the program fails with a
+<code>FileNotFoundException</code> when you try to create the Scanner.  You have seen some kinds of exceptions in previous labs.  The <code>FileNotFoundException</code>
+is a bit different than the exceptions we've seen before, because the compiler requires us to declare in the method heading
+that this exception might occur:
+<pre class="block">
+  public static void main(String[] args) <span style="color:red">throws FileNotFoundException</span>
+</pre>
+
+<p>
+The main change is the way that we construct the <code>Scanner</code>. First, we
+create a <code>File</code> object by giving the constructor the name of the file we
+want to read.  Then we use the <code>File</code> object to construct our <code>Scanner</code>:
+<pre class="block">
+    <span style="color:red">File file = new File("story.txt");</span>
+    Scanner scanner = new Scanner(<span style="color:red">file</span>);
+</pre>
+ 
+When we construct the <code>Scanner</code> from the given file, the file 
+is <em>opened</em>.  This means that the operating system gets involved with finding the 
+actual file on the hard drive and preparing to read its contents.  When you're 
+finished reading a file, you should tell the operating system you're done so that
+it can clean things up (for example, most operating systems record the date and time at which a file was
+last accessed).  This is called <em>closing</em> the file, which we can
+do with the <code>close</code> method of the scanner:
+
+<pre class="block">
+    <span style="color:red">scanner.close();</span>
+</pre>
+
+<h3>Alternatives for opening a file</h3>
+
+In the zyBook you may have seen a slight variation on the strategy above.  Instead of creating the Scanner from a <code>File</code> object, you can create the Scanner from an instance of <code>FileInputStream</code>.
+<pre class="block">
+    <span style="color:red">FileInputStream fis = new FileInputStream("story.txt");</span>
+    Scanner scanner = new Scanner(<span style="color:red">fis</span>);
+</pre>
+This accomplishes the same thing.  The only subtle difference is that if there is an exception, it will occur on creating the <code>FileInputStream</code> instead of on creation of the Scanner.
+<p>
+In the zyBook, they also declare the more general type <code>IOException</code> instead of 
+<code>FileNotFoundException</code>.  This makes no practical difference.
+
+<h3>The File Class</h3>
+
+<p>
+The Java libraries provide a class called 
+<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html" target="New_Win"><code>File</code></a>
+that represents an abstract file name and path. It has methods for examining
+and modifying the properties of files and directories. Some useful methods of the 
+<code>File</code> class are illustrated in the snippet below.
+
+</p> 
+
+<pre class="block">
+    File file = new File("story.txt");
+    System.out.println(file.exists());          // true if the file exists
+    System.out.println(file.getName());         // name of the file 
+    System.out.println(file.getAbsolutePath()); // absolute path to the file
+    System.out.println(file.length());          // size of the file
+</pre>
+
+Try adding the lines above to your <code>main</code> method and see what 
+the output is.
+
+
+
+<!--You should see what's called a <i>stack trace</i>, which shows which method called which method which called ... which method that generated the exception. The layering of method calls that lead to a particular point in the execution of your program is known as the <i>call stack</i>, thus the name stack trace. You saw last week how you can view the call stack at any break- or watchpoint in the Eclipse debugger.
+-->
+
+
+
+<!-- NAVLINKS START - do not edit -->
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+<div id="footer"><table width="100%"><tr><td align="left"><a href="page01.html">&lt; Introduction</a></td><td align="right"><a href="page04.html">The path to a file &gt;</a></td></tr></table></div>
+<!-- NAVLINKS END - do not edit -->
+</body>
+</html>

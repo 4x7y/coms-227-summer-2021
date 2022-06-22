@@ -1,0 +1,111 @@
+<head>
+    <title>Syllabus</title>
+<style>
+body{
+  margin-left:2em;
+  margin-right:2em;
+}
+ul.nobullets{
+  /* Make sure there are no bullets */
+  list-style:none;
+}
+</style>
+</head>
+<body>
+<h1>
+<center>
+Com S 227<br>
+Installing Java and Eclipse<br>
+</center>
+</h1>
+
+In this course we will be using the Java Development Kit (JDK) along with a development 
+called Eclipse for editing and debugging Java code.  You will need Java version 11 (or higher).  Note that Eclipse itself is a Java program, so you'll want to install Java first, then Eclipse.
+
+<h2>Installing Java</h2>
+
+If some version of Java is already installed on your system, it is likely just the "Java runtime environment", or JRE.  This is enough to run Java programs, but for developing code we generally want the full Java Development Kit, or JDK (which also includes a JRE).
+ 
+There are many options for installing a JDK, but probably the simplest is the following:
+<ol>
+<li>Go to 
+<a href="https://adoptopenjdk.net/releases.html" target="_blank">
+https://adoptopenjdk.net/releases.html</a>
+<li>At the top, select checkboxes for OpenJDK 11 with the HotSpot JVM (later versions are probably fine too)
+  <ul><li><em>Exception: </em> <strong>If you have a Mac and are running OS X Big Sur, you must use JDK version 14.</strong>
+  </ul>
+<li>Scroll down to the installer for your platform:
+  <ul>
+    <li>For Windows, scroll down to the x64 section and download the .msi installer for the JDK (screenshot below)
+     <li>For OS X, scroll down to the MacOS section and download the .pkg installer for the JDK (screenshot below)
+     </ul>
+<li>Find the installer in your Downloads folder, or wherever you put it, and double-click, then follow the instructions.  The default options should all be ok.  <em>(Make a note of the installation location, you may need it later.)</em>
+<li>After the installation completes, you may wonder if you can "run" it.  You can't. It isn't an application, it's a programming language and an environment in which <em>other</em> Java-based applications can run.  (Such as Eclipse.)
+</ol>
+
+<figure>
+  <img src="windows.png" alt="Screenshot of JDK installer download for Windows" width="400">
+  <figcaption>Fig.1 - Windows installer</figcaption>
+</figure>
+
+<figure>
+  <img src="mac.png" alt="Screenshot of JDK installer download for OS X" width="400">
+  <figcaption>Fig.2 - OS X installer</figcaption>
+</figure>
+
+<h2>Installing Eclipse</h2>
+
+<strong><em>Be sure you have installed the JDK first.  Eclipse is a Java application and requires a Java installation in order to run.</em></strong>
+<ol>
+<li>Go to 
+
+<a href="https://www.eclipse.org/downloads/packages/installer" target="_blank">
+https://www.eclipse.org/downloads/packages/installer</a>
+<li>Download the installer for your platform
+<li>When you run the installer, select the package "Eclipse IDE for Java Developers" (screenshot below)
+</ol>
+
+<figure>
+  <img src="eclipse.png" alt="Screenshot of Eclipse installer download" width="400">
+  <figcaption>Fig.3 - Eclipse installer</figcaption>
+</figure>
+
+<h2>Trying it out</h2>
+
+Find the Eclipse application (on a Mac, you'll find Eclipse.app in the Applications folder; on Windows, just use the search tool by the Windows button) and start it.  When it starts, it will suggest a default location for your "workspace" where files and projects will be stored.  Edit this as you see fit.  Then try following the steps in the first Com S 227 lab.
+<p>
+<strong>If you have any problems, post a question on Piazza!</strong>
+
+<h2>Alternative - use Remote Desktop</h2>
+
+Most students in 227 prefer to have Java and Eclipse installed on their own computers and to keep their workspace on the local hard drive.  The only challenge here is that we expect all your work to be securely backed up, so you'll need to be proactive in saving a copy of everything in network storage.  We'll go over some options during Lab 1.
+<p>
+However, you can also get access to a Java/Eclipse installation using the CS department's terminal server via Remote Desktop.  This will give you a virtual Windows desktop, similar to the physical labs we normally use in Pearson, and your files will be stored on the ISU servers.
+
+<h3>Get on the VPN first</h3>
+
+If you are outside the Iowa State campus network, you'll need to get on the VPN for remote access. Open up the IT services page: 
+<a href="https://iastate.service-now.com/it/" target="_blank">
+https://iastate.service-now.com/it/</a>
+and search for "VPN install" which should bring up the article entitled
+"Virtual Private Network (VPN): Install and Connect".
+
+<h3>Connecting with Remote Desktop</h3>
+
+(Mac users: you will need to install the Microsoft Remote Desktop client from the app store; it's free.)
+<p>
+The address is <strong>rdp.cs.iastate.edu</strong>. You'll need to log in using your ISU NetID and password.  On Windows, when you enter your NetID, you'll need to prefix it with the IASTATE domain:
+<p>
+IASTATE\<em>yourNetID</em>
+<p>
+When you first create an Eclipse workspace, it will probably suggest a location on your U: drive.  Normally, the drive letter U: is mapped to an ISU network server known more generally as <em>myfiles</em>.  You can also access your myfiles storage directly as though it was a hard drive on your own computer.  See this page
+<a href="https://www.cs.iastate.edu/how-access-your-files-through-samba-server
+" target="_blank">
+https://www.cs.iastate.edu/how-access-your-files-through-samba-server</a>
+for details.
+
+
+
+
+
+</body>

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>Adding a main Method</title>
+   <link rel="stylesheet" href="../navstyle.css" type="text/css" media="screen">
+</head>
+<body>
+<!-- NAVMENU START - do not edit -->
+<div id="sidebar"><ol><li><a href="page01.html">Welcome</a></li><li><a href="page02.html">Lab Logistics</a></li><li><a href="page03.html">Getting Help</a></li><li><a href="page04.html">Where Are My Files?</a></li><li><a href="page05.html">Eclipse</a></li><li><a href="page06.html">Creating a Workspace</a></li><li><a href="page07.html">Creating a Project</a></li><li><a href="page08.html">Creating a Class</a></li><li><a href="page09.html">Adding a main Method</a></li><li><a href="page10.html">Finding Your Project Files</a></li><li><a href="page11.html">Backups</a></li><li><a href="page12.html">Using a SpecChecker</a></li><li><a href="page13.html">Submitting an Assignment</a></li><li><a href="page14.html">Accessing MyFiles</a></li></ol></div>
+<div id="main">
+<!-- NAVMENU END - do not edit -->
+
+<h2>Adding a main Method</h2>
+
+<p>
+Insert your cursor within the surrounding curly braces ({}) of the Greeter class and add a main method:
+</p>
+
+<blockquote>
+<pre>
+public class Greeter {
+   public static void main(String[] args) {
+
+   }
+}
+</pre>
+</blockquote>
+
+<p>
+The meanings of <code>public</code>, <code>static</code>, <code>void</code>, <code>String</code>, and <code>args</code> will be discussed throughout the semester. For now, it is important to know that the <code>main</code> method is where your program will begin its execution.
+</p>
+
+<p>
+Note that this method is indented one level within the class.  You can use the Tab key to indent the first line.  Eclipse should assist in formatting the rest.  Your code will be more readable by yourself and your graders if you cleanly indent as you add methods and other blocks of code.
+</p>
+<p>
+Many Java programmers prefer to keep the braces lined up vertically:
+<blockquote>
+<pre>
+public class Greeter 
+{
+   public static void main(String[] args) 
+   {
+
+   }
+}
+</pre>
+</blockquote>
+Either way is fine, as long as you are consistent.
+<p>
+Be sure to save your work each time you make a change, using Ctrl-S or File -&gt; Save.
+
+<h3>Printing</h3>
+
+<p>
+Add a single line within the curly braces of the main method that prints out the text "Hello, NAME", where NAME is replaced by your name, for example, 
+
+<p>
+<code>System.out.println("Hello, Steve");</code>
+
+<p>
+<code>System.out</code> is an object that represents the <em>standard output stream</em> for printing to a text window (sometimes called a "console").  This object has an operation, or <em>method</em>, named <code>println</code> that actually does the work.
+
+<h3>Running Your Program</h3>
+
+<p>
+Provided you typed correctly, you have just completed your first Java program.  
+To run it, right-click on the <code>Greeter</code> class in the Package Explorer and select 
+Run As -&gt; Java Application.
+(If the editor pane containing the <code>Greeter</code> class is active, the green Play button in the toolbar should also work.)  You should see the printed text in Eclipse's <i>console window</i>.
+</p>
+
+<h3>A few useful things to know about Eclipse</h3>
+
+<ul class="addSpace">
+<li>
+Try deleting the semicolon from your <code>println</code> statement.  Notice that you immediately get a red error marker.  If you hover over the marker in the left margin, you can see the error message from the compiler.  Eclipse has a very clever incremental compiler that always runs in the background, checking your code for possible syntax errors.  <strong>If you ever see red error markers in your code, don't bother trying to run it</strong>: the results, if any, will be garbage.  Fix the syntax errors first!
+
+<li>
+Try double-clicking on one of the curly braces.  Notice that it locates the matching brace and highlights all the code in between.
+
+<li>
+Try messing up the indentation, e.g., shift your println statement over to the right, and move the closing brace to the left margin or something.  Then highlight the messed-up code, and click Ctrl-I (Cmd-I on a Mac).  This is the shortcut for "fix indentation".  
+
+<li>(There is an even more powerful command, Ctrl-F, that will fix up <em>all</em> formatting, not just indentation, according to the formatting preferences you have set.  You can find the formatting preferences under Window -&gt; Preferences, or Eclipse -&gt; Preferences on a Mac.  Then select Java -&gt; Code Style -&gt; Formatter.)
+
+<li>
+Try highlighting a block of code, then click Ctrl-/ (Cmd-/ on a Mac).  This comments out the highlighted code.  Highlight the commented-out block and do Ctrl-/ again.  This should un-comment it.
+
+There is a keyboard shortcut Ctrl-space (Cmd-space on a Mac) that works for many kinds of <em>code completion</em>.  Try this:
+<ol>
+<li>Delete the entire main method
+<li>Within the curly braces for <code>Greeeter</code>, type <code>main</code> and hit Ctrl-space.  Select the first option in the dropdown that pops up.  This fills in the declaration for a standard main method
+<li>Within the curly braces for your main method, type <code>syso</code> and hit Ctrl-space.  This expands to <code>System.out.println()</code>;
+</ol>
+</ul> 
+
+<h3>This is a Program?</h3>
+
+<p>
+Most "programs" you are familiar with have buttons, menus, graphics, and so on.  For most of this course, your perfectly valid code will consist of components with well-defined behavior that are intended to form part of a larger system.  Sometimes, we'll use them to make a complete program that involves input and output only on a text console.  Graphical user interfaces (GUIs) are an advanced topic that we will not address in great detail in this course.  In some of our assignments you'll be provided with a GUI to work with, and you are encouraged to explore how they work.
+</p>
+
+
+
+<!-- NAVLINKS START - do not edit -->
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+<div id="footer"><table width="100%"><tr><td align="left"><a href="page08.html">&lt; Creating a Class</a></td><td align="right"><a href="page10.html">Finding Your Project Files &gt;</a></td></tr></table></div>
+<!-- NAVLINKS END - do not edit -->
+</body>
+</html>

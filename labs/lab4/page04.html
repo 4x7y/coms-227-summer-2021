@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>Checkpoint 1</title>
+   <link rel="stylesheet" href="../navstyle.css" type="text/css" media="screen">
+</head>
+<body>
+<!-- NAVMENU START - do not edit -->
+<div id="sidebar"><ol><li><a href="page01.html">Introduction</a></li><li><a href="page02.html">Conditional statements</a></li><li><a href="page03.html">Reading flowcharts</a></li><li><a href="page04.html">Checkpoint 1</a></li><li><a href="page05.html">Debugging</a></li><li><a href="page06.html">Breakpoints and single-stepping</a></li><li><a href="page07.html">Objects and instance variables</a></li></ol></div>
+<div id="main">
+<!-- NAVMENU END - do not edit -->
+
+
+<h1>Checkpoint 1</h1>
+
+<ol class="addSpace">
+
+<li>
+Read all three flowcharts, and try out some sample values by hand.  Decide which one or ones are correct, and which are incorrect.  For any that are incorrect, give a <strong>specific value</strong> for the weight on which it gives you the wrong price.
+
+<li>Write Java code implementing the logic of the first flowchart.  Put your code into the <code>computePostage</code> method of the skeleton class <code>PostageUtil.java</code> in your package <code>postage1</code>.  This is a simple mathematical function that calculates an output from an input.  No instance variables are needed, so we can make it a <code>static</code> method.  When you have written the code, go to the class <code>PostageTest.java</code> in your <code>lab4</code> package.  Make sure the <code>import</code> statement refers to package <code>postage1</code>, and run the main method. Verify that you are getting the results you expect (which, if you believe the flowchart logic to be incorrect, may not match the given "expected" values).
+
+<p>
+<ul class="addSpace">
+<li>You may be alarmed to see output such as "0.8899999999999999" where you're expecting ".89".  This is a normal consequence of using floating-point arithmetic: most values are not quite exact.  If you want to see the results, say, rounded to two decimal places, we can format the output.  The simplest way to do this is with <code>System.out.printf()</code>.  See the alternate test class 
+<a href="PostageTestFormatted.java" target=_blank></code>PostageTestFormatted.java</code></a><br>
+for an illustration.  
+</ul>
+
+<li>Next, write Java code for the logic of the second flowchart. Don't modify the code you have in the <code>postage1</code> package; instead, copy 
+<code>PostageUtil.java</code> into the package <code>postage2</code> and
+edit the <code>package</code> declaration to be <code>postage2</code>.  Delete the method body for <code>computePostage</code> so you can rewrite it.
+<li>Now edit the import statement of 
+<code>PostageTest.java</code> so it refers to <code>postage2.PostageUtil</code>, and run it again.
+<p>
+<ul class="addSpace">
+<li>Now you can probably see why we're using different packages:  you can have the test code run a completely different implementation of <code>PostageUtil</code> just by changing the import statement.
+</ul>
+
+<li>Do the same for the third flowchart, using package <code>postage3</code>.
+
+<!--
+<li>Finally, use <code>postage1.PostageUtil</code> to create a Java class with a main method that reads a weight from the console, and prints out the postage.  
+<ul><li>
+Note that the <code>Scanner</code> class includes a method <code>nextDouble</code> that is similar to
+<code>nextInt</code> but can read floating-point numbers.
+</ul>
+-->
+</ul>
+
+
+<!-- NAVLINKS START - do not edit -->
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+<div id="footer"><table width="100%"><tr><td align="left"><a href="page03.html">&lt; Reading flowcharts</a></td><td align="right"><a href="page05.html">Debugging &gt;</a></td></tr></table></div>
+<!-- NAVLINKS END - do not edit -->
+</body>
+</html>

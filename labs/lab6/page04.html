@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>The path to a file</title>
+   <link rel="stylesheet" href="../navstyle.css" type="text/css" media="screen">
+</head>
+<body>
+<!-- NAVMENU START - do not edit -->
+<div id="sidebar"><ol><li><a href="page01.html">Introduction</a></li><li><a href="page03.html">Reading from a file</a></li><li><a href="page04.html">The path to a file</a></li><li><a href="page05.html">Writing to a file</a></li><li><a href="page06.html">Parsing lines of a file</a></li><li><a href="page07.html">ArrayLists and arrays</a></li><li><a href="page08.html">Reading data</a></li><li><a href="page09.html">ArrayLists of objects</a></li><li><a href="page10.html">Polylines</a></li><li><a href="page11.html">Using an ArrayList</a></li><li><a href="page12.html">Reading a file into an ArrayList</a></li></ol></div>
+<div id="main">
+<!-- NAVMENU END - do not edit -->
+
+
+<!--You can also construct a <code>Scanner</code> directly from a <code>File</code>
+object:
+
+<pre class="block">
+    Scanner scanner = new Scanner(file);
+</pre>
+-->
+
+<h2>Using a relative or absolute path to a file</h2>
+When you run your code from Eclipse, it treats the project directory as the "working directory" for the program.  If you are trying to read a file and you don't have the file in the project directory, you can still get to it using an absolute or relative path.  For example, suppose your project directory is <code>U:\cs227\workspace\project8</code> but the file "story.txt" is 
+located in <code>U:\cs227\stuff\</code>, as shown:
+<p>
+<img src="filetree1.jpg" width="690" />
+<p>
+
+
+You can specify the file's location as an
+<em>absolute path</em>, starting from the root of the filesystem: 
+
+<pre class="block">
+File file = new File("U:/cs227/stuff/story.txt");
+</pre>
+
+<p>
+It is often simpler and more reliable to use a <em>relative</em> path. Use the string ".." (two dots) to mean,
+"go up to the parent directory."  In the illustration above, to get from the <code>project8</code> directory
+to the file <code>story.txt</code> you describe the directions as follows:
+<ol>
+<li>Go up one level to the <code>workspace</code> directory.
+<li>Go up one level to the <code>cs227</code> directory.
+<li>Go down into the <code>stuff</code> directory.
+<li>Open the file <code>story.txt</code>.
+</ol>
+(Follow the red arrows in the illustration.) As a path, this is written,
+<pre class="block">
+File file = new File("../../stuff/story.txt");
+</pre>
+
+<h3>File paths in Java strings</h3>
+Note that even though Windows always uses backslashes (<code>\</code>) for the path separator character, Java allows you to use either backslashes (<code>\</code>) or forward slashes (<code>/</code>).  The catch is that if you want a backslash character in a Java string, <em>you have to type two backslashes</em>.  (The backslash character already has a special meaning in Java strings, so when you really want a backslash, you have to write "backslash backslash".)  So the absolute path would look like this:
+
+<pre class="block">
+File file = new File("U:\\cs227\\stuff\\story.txt");
+</pre>
+and the relative path would look like this:
+<pre class="block">
+File file = new File("..\\..\\stuff\\story.txt");
+</pre>
+
+
+<!-- NAVLINKS START - do not edit -->
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+<div id="footer"><table width="100%"><tr><td align="left"><a href="page03.html">&lt; Reading from a file</a></td><td align="right"><a href="page05.html">Writing to a file &gt;</a></td></tr></table></div>
+<!-- NAVLINKS END - do not edit -->
+</body>
+</html>

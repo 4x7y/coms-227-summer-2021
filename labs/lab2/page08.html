@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>Generating HTML</title>
+   <link rel="stylesheet" href="../navstyle.css" type="text/css" media="screen">
+       <script src="../labs.js"></script>
+</head>
+<body>
+<!-- NAVMENU START - do not edit -->
+<div id="sidebar"><ol><li><a href="page01.html">Introduction</a></li><li><a href="page02.html">Class 101</a></li><li><a href="page03.html">Java API</a></li><li><a href="page04.html">Writing a Class</a></li><li><a href="page05.html">Constructing Instances</a></li><li><a href="page06.html">Writing the Code</a></li><li><a href="page07.html">Javadoc</a></li><li><a href="page08.html">Generating HTML</a></li><li><a href="page09.html">Checkpoint 1</a></li><li><a href="page10.html">The Rabbit Problem</a></li><li><a href="page11.html">The Rabbit Simulator</a></li><li><a href="page12.html">Checkpoint 2</a></li></ol></div>
+<div id="main">
+<!-- NAVMENU END - do not edit -->
+
+<h2>Generating HTML</h2>
+
+<div style="border: 2px solid #ff0000; right-margin:1.0in">
+In the homework assignments, a portion of the points will be designated for writing  Javadoc-style comments as in the previous example.  Although we <em>don't</em> require you to actually generate the html for homework submission, we'd like you to try it at least once in lab, so that you can see why the exact format of Javadoc-style comments is valuable.
+</div>
+
+<p>
+The JDK includes a tool that will convert the specially formatted comments into html pages like the online Java API documentation.  We can run it easily from Eclipse.
+<ol>
+
+
+<li style="margin-bottom:5px" >Highlight the "project2" project, go to the Project menu, and run <code>Generate Javadoc...</code>. A dialog appears.
+Most of the default settings are fine, but check the next three items.
+
+<li style="margin-bottom:5px" >The project2 project should be checked.
+<li style="margin-bottom:5px" >The "Javadoc command:" field should contain a path to a program called <strong>javadoc</strong>, similar to the following:
+<pre class="block">
+C:\Program Files\AdoptOpenJDK\jdk11.0.8.10-hotspot\bin\javadoc.exe
+</pre>
+on Windows, or
+<pre class="block">
+/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/javadoc
+</pre>
+on a Mac.
+<p>
+<strong>The paths above show the default installation locations used by the AdoptOpenJDK installers for JDK 11 (exact version numbers may vary)</strong>.  
+If you used a different installation, you may see a different path.  In some cases, you may need to click the <strong>Configure</strong> button and navigate to the javadoc
+executable on your computer.  
+<p>
+If you are not sure, feel free to ask your TA to help you find the correct path. Then click Finish.
+
+<!--
+<div class="expandable">
+<span class="expandableTag">
+What if it doesn't?
+</span>
+<div class="expandableContent">
+<ul>
+<li>Click the <code>Configure</code> button and navigate to the javadoc
+executable, <code>javadoc.exe</code>.  Normally the path will be
+similar to the following:
+
+If you are not sure, feel free to ask your TA to help you find the correct path. Then click Finish.</li>
+</ul>
+
+</div>
+</div>
+-->
+
+<li style="margin-bottom:5px" >In the "Destination" field, make sure you see an <em>absolute path</em> into your
+your workspace, it should be similar to:
+<pre class="block">
+U:\cs227\workspace\project2\lab2\doc
+</pre>
+or
+<pre class="block">
+/Users/username/Documents/cs227/workspace/project2/lab2/doc
+</pre>
+on a Mac, depending on exactly how you named your workspace directory.
+
+<!--
+<em>If you see a network path starting with "<code>\\cyfiles.iastate.edu...</code>" or something like that, change it to an absolute path starting with a drive letter.</em>
+<li>If necessary, confirm in the next dialog that a "doc" directory may be
+written to in your project.
+-->
+<li style="margin-bottom:5px" >After the javadoc tool runs (it will produce some console output) a webpage containing the documentation is created inside your project folder.  You can expand the directory <code>doc</code> in the Package Explorer and right-click on <code>index.html</code> to view the page in a web browser within Eclipse.  (If you'd prefer to use a traditional web browser, open the file through  File Explorer.)  Nice, huh?
+
+<!--
+<ul>
+<li>Note: if you only see an empty 'doc' directory in your project, it
+is probably because your workspace is located under a symbolic directory
+such as "Documents" or "Desktop".  We recommend that you set up a workspace
+using an absolute path on a mapped drive, such as <code>U:\cs227\workspace</code>,
+as <a href="http://www.cs.iastate.edu/~cs227/labs/lab1/page08.html">
+described in lab 1</a>.
+</ul>
+-->
+
+</ol>
+
+<p>
+Compare the generated webpage to the documentation in the source code.
+Try making some changes and see where the changes appear in the html.
+What effect do the <code>@return</code> and <code>@param</code> have?
+
+<p>
+If you have trouble, your TA is there to help.
+</p>
+
+
+
+
+<!-- NAVLINKS START - do not edit -->
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+<div id="footer"><table width="100%"><tr><td align="left"><a href="page07.html">&lt; Javadoc</a></td><td align="right"><a href="page09.html">Checkpoint 1 &gt;</a></td></tr></table></div>
+<!-- NAVLINKS END - do not edit -->
+</body>
+</html>
