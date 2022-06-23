@@ -18,3 +18,10 @@
 * [Javadoc](homework/hw2/doc/index.html)
 * [SpecChecker](homework/hw2/speccheck_hw2.jar)
 * [Skeleton Code](homework/hw2/sum22_hw2_skeleton.zip)
+
+### Mini-assignment 2
+
+* [Spec](homework/mini2/mini2.pdf)
+* [Javadoc](homework/mini2/doc/index.html)
+* [SpecChecker](homework/mini2/speccheck_mini2.jar)
+* [Skeleton Code](homework/mini2/sum22_mini2_skeleton.zip)
